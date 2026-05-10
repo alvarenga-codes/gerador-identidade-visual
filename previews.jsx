@@ -9,7 +9,7 @@ function PreviewFrame({ label, children, aspect = "16/10" }) {
         <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-500">
           {label}
         </span>
-        <span className="text-[11px] text-neutral-400">Ao vivo</span>
+        <span className="text-[11px] text-neutral-400">Live preview</span>
       </div>
       <div
         className="relative overflow-hidden rounded-2xl ring-1 ring-black/5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_40px_-12px_rgba(0,0,0,0.18)]"
@@ -54,10 +54,10 @@ function HeroPreview({ identity, brandName, slogan }) {
               color: palette.muted,
             }}
           >
-            <span>Produto</span>
-            <span>Estúdio</span>
-            <span>Jornal</span>
-            <span>Contato</span>
+            <span>Product</span>
+            <span>Studio</span>
+            <span>Journal</span>
+            <span>Contact</span>
           </div>
           <button
             className="rounded-full px-3.5 py-1.5 text-[11px] font-medium"
@@ -67,7 +67,7 @@ function HeroPreview({ identity, brandName, slogan }) {
               fontFamily: `'${fonts.body}', sans-serif`,
             }}
           >
-            Começar →
+            Get started →
           </button>
         </div>
 
@@ -105,9 +105,8 @@ function HeroPreview({ identity, brandName, slogan }) {
                 color: palette.muted,
               }}
             >
-              {brandName || "Brand"} nasce do equilíbrio entre estética e
-              intenção — uma identidade criada para transmitir presença em cada
-              detalhe.
+              {brandName || "Brand"} brings together craft and clarity —
+              products made with intention, for people who notice the details.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <button
@@ -118,7 +117,7 @@ function HeroPreview({ identity, brandName, slogan }) {
                   fontFamily: `'${fonts.body}', sans-serif`,
                 }}
               >
-                Explorar a coleção
+                Explore the collection
               </button>
               <button
                 className="rounded-full px-5 py-2.5 text-[12px] font-medium ring-1"
@@ -130,7 +129,7 @@ function HeroPreview({ identity, brandName, slogan }) {
                   boxShadow: `inset 0 0 0 1px ${palette.ink}22`,
                 }}
               >
-                Assistir vídeo
+                Watch film
               </button>
             </div>
           </div>
@@ -184,7 +183,7 @@ function PackagingPreview({ identity, brandName }) {
     materialHint === "matte-aluminum" || materialHint === "matte-tech";
 
   return (
-    <PreviewFrame label="Mockup" aspect="4/5">
+    <PreviewFrame label="Packaging Mockup" aspect="4/5">
       <div
         className="absolute inset-0 flex items-end justify-center p-6"
         style={{
@@ -300,7 +299,7 @@ function BusinessCardPreview({ identity, brandName }) {
   const { palette, fonts } = identity;
 
   return (
-    <PreviewFrame label="Cartão de negócios · Glassmorphism" aspect="16/10">
+    <PreviewFrame label="Business Card · Glassmorphism" aspect="16/10">
       <div
         className="absolute inset-0"
         style={{
@@ -375,7 +374,7 @@ function BusinessCardPreview({ identity, brandName }) {
                   className="text-[10px] uppercase tracking-[0.2em] text-white/70 mt-0.5"
                   style={{ fontFamily: `'${fonts.body}', sans-serif` }}
                 >
-                  Profissional Frontend
+                  Developer & Designer
                 </div>
               </div>
 
@@ -385,7 +384,7 @@ function BusinessCardPreview({ identity, brandName }) {
               >
                 <div className="space-y-0.5">
                   <div>
-                    exemplo@
+                    seuproduto@
                     {(brandName || "brand").toLowerCase().replace(/\s+/g, "")}
                     .com
                   </div>

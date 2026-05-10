@@ -49,7 +49,7 @@ const VIBE_PRESETS = {
         bodyWeight: 400,
       },
     ],
-    descriptor: "Refinado · Editorial · Luxo discreto",
+    descriptor: "Refined · Editorial · Quiet luxury",
     materialHint: "frosted-glass",
   },
   "Tech Futurista": {
@@ -99,7 +99,7 @@ const VIBE_PRESETS = {
         bodyWeight: 400,
       },
     ],
-    descriptor: "Afiado · Projetado · Inovador",
+    descriptor: "Sharp · Engineered · Forward-leaning",
     materialHint: "matte-tech",
   },
   Orgânico: {
@@ -144,7 +144,7 @@ const VIBE_PRESETS = {
         bodyWeight: 400,
       },
     ],
-    descriptor: "Autêntico · Feito à mão · Honesto",
+    descriptor: "Earthy · Handmade · Honest",
     materialHint: "kraft-paper",
   },
   "High-Performance": {
@@ -189,7 +189,7 @@ const VIBE_PRESETS = {
         bodyWeight: 400,
       },
     ],
-    descriptor: "Ousado · Atlético · Intransigente",
+    descriptor: "Bold · Athletic · Uncompromising",
     materialHint: "matte-aluminum",
   },
   "Pastel Sereno": {
@@ -239,7 +239,7 @@ const VIBE_PRESETS = {
         bodyWeight: 400,
       },
     ],
-    descriptor: "Suave · Calmo · Respeitoso",
+    descriptor: "Soft · Calm · Considered",
     materialHint: "frosted-glass",
   },
   "Editorial Mono": {
@@ -284,7 +284,7 @@ const VIBE_PRESETS = {
         bodyWeight: 400,
       },
     ],
-    descriptor: "Neutro · Alto contraste · Qualidade para impressão",
+    descriptor: "Neutral · High-contrast · Print-grade",
     materialHint: "matte-paper",
   },
 };

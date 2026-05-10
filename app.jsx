@@ -63,7 +63,7 @@ function SwatchRow({ label, hex, onCopy }) {
 
 function Sidebar({ state, setState, onGenerate, identity, copiedKey, onCopy }) {
   return (
-    <aside className="w-[360px] shrink-0 border-r border-black/5 bg-[#FAFAF7] flex flex-col h-full">
+    <aside className="w-full md:w-[360px] shrink-0 border-b md:border-b-0 md:border-r border-black/5 bg-[#FAFAF7] flex flex-col md:h-full">
       {/* Header */}
       <div className="px-6 pt-6 pb-5 border-b border-black/5">
         <div className="flex items-center gap-2">
@@ -72,20 +72,20 @@ function Sidebar({ state, setState, onGenerate, identity, copiedKey, onCopy }) {
           </div>
           <div>
             <div className="text-[13px] font-semibold tracking-tight text-neutral-950">
-              Ambiente de experimentação da marca
+              Brand Playground
             </div>
             <div className="text-[10px] uppercase tracking-[0.16em] text-neutral-500">
-              Estúdio de identidade visual
+              Identity Studio
             </div>
           </div>
         </div>
       </div>
 
       {/* Scrollable controls */}
-      <div className="flex-1 overflow-y-auto px-6 py-5 space-y-6">
+      <div className="md:flex-1 md:overflow-y-auto px-6 py-5 space-y-6">
         {/* Inputs */}
         <div className="space-y-4">
-          <Field label="Empresa">
+          <Field label="Brand Name">
             <input
               type="text"
               value={state.brandName}
@@ -97,7 +97,7 @@ function Sidebar({ state, setState, onGenerate, identity, copiedKey, onCopy }) {
             />
           </Field>
 
-          <Field label="Slogan" hint="Uma linha curta">
+          <Field label="Tagline" hint="One short line">
             <input
               type="text"
               value={state.slogan}
@@ -126,14 +126,14 @@ function Sidebar({ state, setState, onGenerate, identity, copiedKey, onCopy }) {
           onClick={onGenerate}
           className="w-full rounded-2xl bg-neutral-950 text-white py-3.5 text-[13px] font-semibold tracking-tight hover:bg-neutral-800 active:scale-[0.99] transition shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)]"
         >
-          ✦ Gerar identidade visual ✦
+          ✦ Generate identity
         </button>
 
         {/* Palette readout */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-500">
-              Paleta de cores
+              Palette
             </div>
             <div className="text-[10px] text-neutral-400">
               {identity.descriptor}
@@ -166,12 +166,12 @@ function Sidebar({ state, setState, onGenerate, identity, copiedKey, onCopy }) {
         {/* Type */}
         <div className="space-y-3">
           <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-500">
-            Tipografia
+            Type pairing
           </div>
           <div className="rounded-xl bg-white ring-1 ring-black/5 px-4 py-3.5 space-y-3">
             <div>
               <div className="text-[10px] uppercase tracking-[0.16em] text-neutral-500">
-                Títulos
+                Heading
               </div>
               <div
                 className="text-[22px] leading-tight text-neutral-950 mt-0.5"
@@ -186,7 +186,7 @@ function Sidebar({ state, setState, onGenerate, identity, copiedKey, onCopy }) {
             <div className="h-px bg-black/5" />
             <div>
               <div className="text-[10px] uppercase tracking-[0.16em] text-neutral-500">
-                Textos
+                Body
               </div>
               <div
                 className="text-[14px] leading-snug text-neutral-700 mt-0.5"
@@ -205,7 +205,7 @@ function Sidebar({ state, setState, onGenerate, identity, copiedKey, onCopy }) {
 
       {/* Footer */}
       <div className="px-6 py-4 border-t border-black/5 text-[10px] uppercase tracking-[0.16em] text-neutral-400">
-        Pressione gerar para criar uma nova identidade visual
+        Press generate to remix
       </div>
     </aside>
   );
@@ -214,13 +214,13 @@ function Sidebar({ state, setState, onGenerate, identity, copiedKey, onCopy }) {
 // ---------- Main canvas ----------
 function Canvas({ identity, brandName, slogan }) {
   return (
-    <main className="flex-1 overflow-y-auto bg-[#F4F2EC]">
-      <div className="max-w-[1200px] mx-auto px-10 py-8">
+    <main className="flex-1 md:overflow-y-auto bg-[#F4F2EC]">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-10 py-6 md:py-8">
         {/* Top bar */}
         <div className="flex items-end justify-between mb-8">
           <div>
             <div className="text-[11px] uppercase tracking-[0.18em] text-neutral-500 mb-1">
-              Prévia da identidade
+              Identity preview
             </div>
             <h2 className="text-[28px] tracking-tight text-neutral-950 font-semibold">
               {brandName || "Untitled brand"}
@@ -258,17 +258,23 @@ function Canvas({ identity, brandName, slogan }) {
         </div>
 
         {/* Two cards row */}
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-5" style={{ containerType: "inline-size" }}>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div
+            className="md:col-span-5"
+            style={{ containerType: "inline-size" }}
+          >
             <PackagingPreview identity={identity} brandName={brandName} />
           </div>
-          <div className="col-span-7" style={{ containerType: "inline-size" }}>
+          <div
+            className="md:col-span-7"
+            style={{ containerType: "inline-size" }}
+          >
             <BusinessCardPreview identity={identity} brandName={brandName} />
           </div>
         </div>
 
         <div className="text-[10px] uppercase tracking-[0.16em] text-neutral-400 text-center mt-10 pb-4">
-          Ambiente de experimentação da marca · Estúdio de identidade visual
+          Brand Playground · Live identity surface
         </div>
       </div>
     </main>
@@ -278,8 +284,8 @@ function Canvas({ identity, brandName, slogan }) {
 // ---------- App root ----------
 function App() {
   const [state, setState] = useState({
-    brandName: "Sua marca",
-    slogan: "Mais do que aparência, posicionamento.",
+    brandName: "Solene",
+    slogan: "A quieter way to glow.",
     vibe: "Luxo Minimalista",
   });
   const [seed, setSeed] = useState(1);
@@ -306,7 +312,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen w-screen flex font-[Inter] text-neutral-900 antialiased overflow-hidden">
+    <div className="min-h-screen md:h-screen w-screen flex flex-col md:flex-row font-[Inter] text-neutral-900 antialiased md:overflow-hidden">
       <Sidebar
         state={state}
         setState={setState}
